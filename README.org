@@ -1,0 +1,63 @@
+#+TITLE:README
+** TL:DR
+Python Script for SQL and CMD Injection Attacks.
+
+  - For SQL Injection:
+    : python3 script.py sql http://example.com
+  - For Command Injection:
+    : python3 script.py cmd /opt/scripts/mysql-backup.sh
+
+** overview
+
+This script is designed to perform two types of injection attacks:
+- SQL injection;
+- command injection.
+
+It's a tool that allows the user to specify the type of attack and the target via the command line. The script is structured to be user-friendly and efficient in demonstrating these two common security vulnerabilities.
+
+The tool is designed to perform both =SQL= and =Command Injection attacks=. It offers two modes of operation: SQL Injection (=sql=) and Command Injection (=cmd=), which can be selected based on the command line arguments.
+
+** Requirements
+  - =Python3=
+  - Python libraries: =requests=, =subprocess=.
+
+** Usage
+*** SQL Injection Attack:
+Use this command to perform an SQL injection attack on a specified URL.
+#+begin_src bash
+python3 attack.py sql <URL>
+#+end_src
+
+
+Replace =<URL>= with the *target URL*.
+
+*** Command Injection Attack:
+Use this command for a command injection attack with a specified script path.
+
+#+begin_src bash
+python3 script.py cmd <SCRIPT_PATH>
+#+end_src
+Replace =<SCRIPT_PATH>= with the path to the target backup script.
+
+** Script Funtions in more detail
+*** sql_injection_attack(base_url)
+*Purpose:* Performs an SQL injection attack.
+Parameters:
+- =base_url=: The URL where the SQL injection will be attempted.
+*Working:*
+- Iteratively tests each character in the specified range to find a match using time-based SQL injection method.
+- Concatenates each successful character to form a word (e.g., database name or sensitive data).
+*** command_injection_attack(backup_script)
+*Purpose:* Executes a command injection attack.
+*Parameters:*
+- =backup_script=: The path to the target backup script vulnerable to command injection.
+*Working:*
+- Tries to find the correct password by appending characters to the existing string and checking the output.
+- Continues until the correct password is found.
+*** main()
+*Purpose:* Acts as the entry point of the script.
+*Working:*
+- Parses command-line arguments for attack type and target (URL or script path).
+- Calls the appropriate function based on the selected attack type.
+** Disclaimer
+This tool is for educational purposes only. Unauthorized testing of websites or systems without explicit permission is illegal and unethical.
