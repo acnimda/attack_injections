@@ -1,13 +1,19 @@
 #+TITLE:README
-** TL:DR
+** TL:DR :book:
 Python Script for SQL and CMD Injection Attacks.
 
   - For SQL Injection:
-    : python3 script.py sql http://example.com
-  - For Command Injection:
-    : python3 script.py cmd /opt/scripts/mysql-backup.sh
+#+begin_src bash
+python3 attack.py sql http://example.com
 
-** overview
+#+end_src
+
+  - For Command Injection:
+    #+begin_src bash
+    python3 attack.py cmd /path/to/script.sh
+    #+end_src
+
+** overview :memo:
 
 This script is designed to perform two types of injection attacks:
 - SQL injection;
@@ -39,7 +45,7 @@ python3 script.py cmd <SCRIPT_PATH>
 #+end_src
 Replace =<SCRIPT_PATH>= with the path to the target backup script.
 
-** Script Funtions in more detail
+** Script explained :mortar_board:
 *** sql_injection_attack(base_url)
 *Purpose:* Performs an SQL injection attack.
 Parameters:
@@ -59,5 +65,23 @@ Parameters:
 *Working:*
 - Parses command-line arguments for attack type and target (URL or script path).
 - Calls the appropriate function based on the selected attack type.
-** Disclaimer
+
+** Contributing :ticket:
+  If you notice a typo, an error, or have a suggestion for improvement, your contributions are welcome! Please feel free to open an issue or submit a pull request on GitHub.
+
+  To do this:
+  1. Fork the repository.
+  2. Create a new branch for your changes.
+  3. Make your changes.
+  4. Commit your changes with a clear and detailed commit message.
+  5. Push the changes to your fork.
+  6. Open a pull request from your fork back to the main repository.
+
+
+*** Feedback
+  Your feedback is valuable. If you have any comments or suggestions, please feel free to reach out or create an issue on the project's GitHub page.
+
+
+
+** Disclaimer :warning:
 This tool is for educational purposes only. Unauthorized testing of websites or systems without explicit permission is illegal and unethical.
