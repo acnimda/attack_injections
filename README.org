@@ -1,6 +1,6 @@
 #+TITLE:README
-** TL:DR :book:
-Python Script for SQL and CMD Injection Attacks.
+** TL:DR
+Python Script for =sql= and =cmd= Injection Attacks.
 
   - For SQL Injection:
 #+begin_src bash
@@ -13,7 +13,7 @@ python3 attack.py sql http://example.com
     python3 attack.py cmd /path/to/script.sh
     #+end_src
 
-** overview :memo:
+** overview
 
 This script is designed to perform two types of injection attacks:
 - SQL injection;
@@ -21,7 +21,7 @@ This script is designed to perform two types of injection attacks:
 
 It's a tool that allows the user to specify the type of attack and the target via the command line. The script is structured to be user-friendly and efficient in demonstrating these two common security vulnerabilities.
 
-The tool is designed to perform both =SQL= and =Command Injection attacks=. It offers two modes of operation: SQL Injection (=sql=) and Command Injection (=cmd=), which can be selected based on the command line arguments.
+The tool is designed to perform both =sql= and =Command Injection attacks=. It offers two modes of operation: SQL Injection (=sql=) and Command Injection (=cmd=), which can be selected based on the command line arguments.
 
 ** Requirements
   - =Python3=
@@ -29,7 +29,7 @@ The tool is designed to perform both =SQL= and =Command Injection attacks=. It o
 
 ** Usage
 *** SQL Injection Attack:
-Use this command to perform an SQL injection attack on a specified URL.
+Use this command to perform an *SQL injection attack* on a specified URL.
 #+begin_src bash
 python3 attack.py sql <URL>
 #+end_src
@@ -38,10 +38,10 @@ python3 attack.py sql <URL>
 Replace =<URL>= with the *target URL*.
 
 *** Command Injection Attack:
-Use this command for a command injection attack with a specified script path.
+Use this command for a *command injection attack* with a specified script path.
 
 #+begin_src bash
-python3 script.py cmd <SCRIPT_PATH>
+python3 attack.py cmd <SCRIPT_PATH>
 #+end_src
 Replace =<SCRIPT_PATH>= with the path to the target backup script.
 
@@ -66,7 +66,7 @@ Parameters:
 - Parses command-line arguments for attack type and target (URL or script path).
 - Calls the appropriate function based on the selected attack type.
 
-** Contributing :ticket:
+** Contributing
   If you notice a typo, an error, or have a suggestion for improvement, your contributions are welcome! Please feel free to open an issue or submit a pull request on GitHub.
 
   To do this:
@@ -83,5 +83,5 @@ Parameters:
 
 
 
-** Disclaimer :warning:
+** Disclaimer
 This tool is for educational purposes only. Unauthorized testing of websites or systems without explicit permission is illegal and unethical.
