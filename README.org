@@ -1,6 +1,4 @@
 #+TITLE:README
-** demo test
-
 
 ** TL:DR
 Python Script for =sql= and =cmd= Injection Attacks.
